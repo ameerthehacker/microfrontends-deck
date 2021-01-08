@@ -1,0 +1,16 @@
+{
+  "name": "microfrontends",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "mdx-deck deck.mdx",
+    "build": "mdx-deck build deck.mdx"
+  },
+  "keywords": [],
+  "author": "Ameer Jhan",
+  "license": "ISC",
+  "dependencies": {
+    "mdx-deck": "3.1.0"
+  }
+}
