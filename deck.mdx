@@ -1,5 +1,6 @@
 import { future } from 'mdx-deck/themes';
 import tq from './media/thank-you.gif';
+import clientBased from './media/client-based.png';
 
 export const theme = future;
 
@@ -73,16 +74,50 @@ export const theme = future;
 - Easiest to start using microfrontends
 - No tooling changes required in your frontends
 - No CSS Pollution
+- Different View libraries/frameworks
 
 ### Cons 😢
 - Full page reload while switching between microfrontends
 - Duplicate dependencies (react, react-dom) downloaded everytime
 - No reuse of common components like **Navbar**, **Footer**
 ---
-### IFrame 🖼️
+### Client Based
+
+<img src={clientBased} />
 
 ---
+### IFrame 🖼️
+- Add server config to load from various s3 buckets
+- The shell will load pages based on the routes in the iframes
+
+#### Challenges 😢
+- No cookie sharing between iframes
+- Syncing routes between shell and iframe
+---
+### Pros 😎
+- No CSS Pollution
+- Different View libraries/frameworks
+- No full page reload
+- Reuse of common components like **Navbar**, **Footer** in shell
+
+### Cons 😢
+- Not good for SEO
+- Duplicate dependencies (react, react-dom) downloaded everytime
+---
 ### Dynamic Asset Loading ⚙️
+- Dynamically mount and unmount apps in the shell
+---
+### Pros 😎
+- Good for SEO
+- No full page reload
+- Reuse of common components like **Navbar**, **Footer** in shell
+- Some of the common dependencies like **React** can be kept in shell
+
+### Cons 😢
+
+- CSS Pollution
+- Using different View libraries/frameworks is tricky
+- Version lock of dependencies across frontends
 
 ---
 ### Module Federation
