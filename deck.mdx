@@ -21,18 +21,63 @@ export const theme = future;
 ---
 ### What is Microfrontend 🤷
 
+- Build independent frontend pieces
+- May or may not use same view library or framework
+- Make them work together as a cohorent single frontend
+
 ---
 ### When do you need Microfrontends 🤷
+
+* Multiple team working on different aspects of a site
+* Independent and faster release cycles
+* Need for different view library in various aspects of a site
 
 ---
 ### Advantages of Microfrontends ❤️
 
+* Easier developer onboarding
+* Seperation of concerns
+* Easier migrations or tech upgrade
+
 ---
 ### Challenges of Microfrontends 😢
+
+* Duplicate dependencies
+* Maintaining common coding practices
+* Communication between microfrontends
+* CSS Pollution
+* Client side routing
 
 ---
 ### Microfrontend Patterns 🔨
 
+- Server Based
+  - Rewrite Config
+- Client Based
+  - iframe
+  - Dynamic Asset Loading
+  - Module Federation
+---
+### Server Based
+- Update your server config 🎉
+```
+  location / {
+    proxy_pass http://s3.amazonaws.com/root/index.html;
+  }
+  location /jobs {
+    proxy_pass http://s3.amazonaws.com/jobs/index.html;
+  }
+```
+---
+### Pros 😎
+- Easiest to start using microfrontends
+- No tooling changes required in your frontends
+- No CSS Pollution
+
+### Cons 😢
+- Full page reload while switching between microfrontends
+- Duplicate dependencies (react, react-dom) downloaded everytime
+- No reuse of common components like **Navbar**, **Footer**
 ---
 ### IFrame 🖼️
 
